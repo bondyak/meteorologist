@@ -26,7 +26,7 @@ class MeteorologistController < ApplicationController
     @lng = @parsed_data_google["results"][0]["geometry"]["location"]["lng"]
 
     @api_key = "4e4a95b571f4498fd72dc87fb461831d"
-    @url_forecast = "https://api.darksky.net/forecast/" + @api_key + "/" + @lat.to_s + "," + @lng.to_s
+    @url_forecast = "https://api.forecast.io/forecast/" + @api_key + "/" + @lat.to_s + "," + @lng.to_s
 
     @parsed_data_forecast = JSON.parse(open(@url_forecast).read)
 
